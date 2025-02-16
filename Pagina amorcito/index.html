@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" onclick="toggleEnvelope()">
+            <div class="flap"></div>
+            <div class="letter">
+                <p>¿Te gustaría que nos amemos para toda la vida?</p>
+                <img src="images/please.gif" alt="GIF de San Valentín">
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="aceptar.html" class="btn accept">Aceptar</a>
+            <button class="btn reject" disabled onmousemove="moveButton(this)">Rechazar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            envelope.classList.toggle('open');
+        }
+
+        function moveButton(button) {
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.position = 'absolute';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
