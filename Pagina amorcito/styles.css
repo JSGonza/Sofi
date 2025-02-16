@@ -7,152 +7,62 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    background-color: #FFC0CB;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(images/corazones.png);
-    background-color: #ffd1dc; /* Rosa pastel */
-    background-size: cover;
-    font-family: 'Pacifico', pacifico;
-}
-
-.container {
+    flex-direction: column;
+    font-family: Arial, sans-serif;
     text-align: center;
-}
-
-.container p {
-    font-size: 34px;
-}
-
-.container p2 {
-    font-size: 32px;
-    font-family: 'Pacifico', pacifico;
-}
-
-.container h1 {
-    font-size: 60px;
-}
-
-.gif-container {
-    position: absolute; /* Posiciona el GIF encima de todo */
-    top: -350px;
-    left: -150px;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Coloca el GIF detrás del texto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.gif-container img {
-    max-width: 100%;
-    max-height: 100%;
 }
 
 .envelope {
     position: relative;
-    width: 800px;
-    height: 480px;
-    background-color: #ff4d4d; /* Rojo */
-    margin: 0 auto;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5 ease;
-}
-
-.flap {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 800px;
-    height: 5px;
-    border-bottom: 100px solid #be3939; /* Rojo */
-    clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* Forma de triángulo invertido */
-    transform-origin: top;
-    transition: transform 0.5s ease;
+    width: 250px;
+    height: 180px;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .letter {
     position: absolute;
     top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+    width: 220px;
+    height: 130px;
     background-color: white;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(100%);
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    transition: transform 0.5s ease;
 }
-
-/* Animación cuando el sobre está abierto */
-.envelope.open .flap {
-    transform: rotateX(180deg); /* Gira la solapa hacia atrás */
-}
-
-.envelope.open .letter {
-    opacity: 1;
-    transform: translateY(0); /* Muestra la carta */
-}
-
-.letter.open {
-    opacity: 1;
+.envelope:hover .letter {
     transform: translateY(0);
-}
-
-.letter p {
-    margin: 0;
-    font-size: 36px;
-    color: #333;
-}
-
-.letter img {
-    padding: auto;
-    width: 400px;
-    height: 310px;
 }
 
 .buttons {
     margin-top: 20px;
 }
 
-.btn {
+.accept-btn, .reject-btn {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
-.accept {
-    background-color: #4CAF50; /* Verde */
+.accept-btn {
+    background-color: green;
     color: white;
 }
 
-.reject {
-    font-family: 'Pacifico', pacifico;
-    background-color: #f44336; /* Rojo */
+.reject-btn {
+    background-color: gray;
     color: white;
-    cursor: not-allowed;
-}
-
-body img {
-    width: 400px;
-    height: 300px;
-}
-
-video {
-    width: 16%; /* Tamaño del video */
-    max-width: 600px; /* Ancho máximo */
-    margin-top: 20px; /* Espacio entre el texto y el video */
-    margin-right: 10px;
-    z-index: 1; /* Asegura que el video esté detrás del GIF */
     position: relative;
 }
